@@ -30,39 +30,23 @@ typedef map<int,int> mii;
 
 // -------------------------------------------          Write your solution         -------------------------------------------------------------------------------//
 
-
-
-
-
 void solve(){
-    int n,k;
-    cin>>n>>k;
-    // p = parent can be positive
-    bool p = false;
-    int ans=0;
-    int t=0;
-    while(n>0){
-        if(n==k){
-            ans=1;break;
-        }
-        if(n+1==k && p){
-            // since p odd hoga then only possible to be have n+1 num also
-            ans=1;break;
-        }
-        if(n%2==1){
-            p=true;
-        }
-        n = n/2;
-        t++;
+    ll n,k;cin>>n>>k;
+    vector<ll>a(n);
+    ll maxi = -1;
+    for(int i=0;i<n;i++){
+        cin>>a[i];
+        maxi = max(maxi,a[i]);
     }
     
-    if(ans) cout<<t<<"\n";
-    else cout<<-1<<"\n";
+    ll mex = min(maxi+1,k-1);
+    cout<<mex<<"\n";
+
+    
+    
     
     
 
-
-    
 }
 
 int32_t main()

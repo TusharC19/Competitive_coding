@@ -30,39 +30,28 @@ typedef map<int,int> mii;
 
 // -------------------------------------------          Write your solution         -------------------------------------------------------------------------------//
 
-
-
-
-
 void solve(){
-    int n,k;
-    cin>>n>>k;
-    // p = parent can be positive
-    bool p = false;
-    int ans=0;
-    int t=0;
-    while(n>0){
-        if(n==k){
-            ans=1;break;
-        }
-        if(n+1==k && p){
-            // since p odd hoga then only possible to be have n+1 num also
-            ans=1;break;
-        }
-        if(n%2==1){
-            p=true;
-        }
-        n = n/2;
-        t++;
+    ll n;cin>>n;vector<pair<int,int>>v(n);
+    int c=0;
+    for(int i=0;i<n;i++){
+        int m;cin>>m;
+        v[i].first=m;
+        v[i].second=c;
+        c=!c;
     }
-    
-    if(ans) cout<<t<<"\n";
-    else cout<<-1<<"\n";
-    
-    
 
+    bool flag=1;
+    sort(v.begin(),v.end());
+    for(int i=0;i<n-1;i++){
+        if(v[i].second==v[i+1].second){
+            flag=0;
+            break;
+        }
+    }
 
-    
+    if(flag) cout<<"yes\n";
+    else cout<<"no\n";
+
 }
 
 int32_t main()
