@@ -34,7 +34,16 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n;cin>>n;
+    ll ans=0;
+    for(ll b=1;b<=n;b++){
+        ll cnt=floor(n/b*1.0);
+        cnt*=cnt;
+        ans+=cnt;
 
+    }
+
+    cout<<ans<<"\n";
 }
 
 int32_t main()

@@ -34,6 +34,11 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n;cin>>n;
+    vector<ll>a(n);rep(i,n) cin>>a[i];
+    int x=*min_element(begin(a),end(a));
+    int y=*max_element(begin(a),end(a));
+    cout<<y-x+1<<endl;
 
 }
 

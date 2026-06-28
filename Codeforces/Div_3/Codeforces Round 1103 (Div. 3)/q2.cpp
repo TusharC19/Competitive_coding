@@ -34,7 +34,28 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n,k;cin>>n>>k;
+    string s;cin>>s;
+    for(int i=0;i<n-k;i++){
+        if(s[i]=='1'){
+            s[i]='0';
+            if(s[i+k]=='1') s[i+k]='0';
+            else s[i+k]='1';
+        }
+        // cout<<s<<endl;
+    }
+    string ans="YES";
+    for(char i:s){
+        if(i=='1'){
+            ans="NO";
+            break;
+        }
+    }
 
+    
+    // cout<<s<<endl;
+    cout<<ans<<endl;
+    
 }
 
 int32_t main()

@@ -34,7 +34,28 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n;cin>>n;
+    vector<ll>a(n),b(n);
+    rep(i,n) cin>>a[i];
+    rep(i,n) cin>>b[i];
 
+    int swaps=0;
+    for(int i=0;i<n;i++){
+       int j=i;
+       for(;j<n && a[j]>b[i] ;j++);
+       if(j==n){
+            swaps = -1;
+            break;
+        }
+       for(;j>i;j--){
+        swap(a[j],a[j-1]);
+        swaps++;
+       }
+
+    }
+
+    cout<<swaps<<endl;
+    
 }
 
 int32_t main()

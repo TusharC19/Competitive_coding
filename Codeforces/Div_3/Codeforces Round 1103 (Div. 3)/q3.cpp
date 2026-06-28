@@ -34,7 +34,24 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll a,b,x;cin>>a>>b>>x;
 
+    ll cnt=0,ans=1e9;
+
+    while(a!=b){
+        ans=min(ans,abs(a-b)+cnt);
+        if(b>a) swap(a,b);
+
+        a/=x;
+        cnt++;
+    }
+
+    // when both becomes equal
+    ans=min(ans,abs(a-b)+cnt);
+
+    cout<<ans<<endl;
+
+    
 }
 
 int32_t main()

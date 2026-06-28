@@ -34,7 +34,31 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n;cin>>n;
+    vl a(n);rep(i,n) cin>>a[i];
+    vector<bool>mark(n,false);
+    vl sit(n,0);
 
+    ll mcnt=n/2+1;
+    for(ll i=0;i<n;i++){
+        if(!mark[i]){
+            ll ind=a[i]-1;
+            if(a[i]>mcnt || a[i]-1<=i){
+                mark[ind]=true;
+                sit[i]=1;
+            }
+        }
+        else break;
+        
+    }
+
+    ll cnt=0;
+    for(ll i=0;i<n;i++){
+        if(sit[i]==1) cnt++;
+    }
+    // cout<<"\n";
+
+    cout<< cnt << endl;
 }
 
 int32_t main()

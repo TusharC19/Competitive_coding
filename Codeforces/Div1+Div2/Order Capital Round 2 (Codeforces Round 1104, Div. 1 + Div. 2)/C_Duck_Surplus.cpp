@@ -34,7 +34,19 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n;cin>>n;
+    vector<ll>a(n);rep(i,n) cin>>a[i];
 
+    ll mx=0;
+
+    for(ll i=0;i<n;i++){
+        if(mx>a[i]) mx=mx+a[i];
+        else mx=a[i];
+    }
+
+    cout<<mx<<endl;
+
+    // cout<<a[n-1]<<endl;
 }
 
 int32_t main()

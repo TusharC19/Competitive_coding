@@ -34,7 +34,22 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n;cin>>n;
+    vector<ll>a(n);rep(i,n) cin>>a[i];
 
+    if(a[n-1]>a[0]){
+        swap(a[0],a[n-1]);
+        return;
+    }
+
+    int curridx=-1;
+    int maxeleidx=-1;
+    for(int i=0;i<n-1;i++){
+        if(a[i]<a[i+1]){
+            curridx=i;
+            ma
+        }
+    }
 }
 
 int32_t main()

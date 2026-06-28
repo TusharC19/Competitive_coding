@@ -31,10 +31,29 @@ typedef map<int,int> mii;
 // -------------------------------------------          Write your solution         -------------------------------------------------------------------------------//
 
 
+bool isPalind(const int& n){
+    string s=to_string(n);
+    string t=s;
+    reverse(s.begin(),s.end());
+    return s==t;
+}
 
 
 void solve(){
+    ll n;cin>>n;
+    ll a=0,b=0;
+    bool flag=false;
+    for(ll a=0;a<=n;a++){
+        ll b=n-a;
+        if(isPalind(a) && b%12==0){
+            flag=true;
+            cout<<a<<" "<<b<<"\n";
+            break;
+        }
+    }
 
+    if(!flag) cout<<-1<<"\n";
+    
 }
 
 int32_t main()

@@ -32,10 +32,7 @@ typedef map<int,int> mii;
 
 
 
-
-void solve(){
-
-}
+ 
 
 int32_t main()
 {
@@ -44,11 +41,12 @@ int32_t main()
     cout.tie(nullptr);
 
 
-    int t;
-    cin>>t;
-    while(t--)
-    {
-        solve();
-    }
+    ll n;cin>>n;
+    ll a=n-(n%5),b=a+5;
+    
+    ll ad=abs(a-n),bd=abs(b-n);
+    int ans = (ad<bd) ? a : b;
+    cout<<ans<<"\n";
+
     return 0;
 }

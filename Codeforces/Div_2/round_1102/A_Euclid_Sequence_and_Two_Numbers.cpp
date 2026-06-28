@@ -34,6 +34,23 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n;cin>>n;
+    vector<ll>a(n);rep(i,n) cin>>a[i];
+    
+    sort(a.begin(),a.end(),greater<ll>());
+    int len=n-2;
+    bool flag=true;
+    for(int i=0;i<len;i++){
+        int val = a[i]%a[i+1];
+        if(val!=a[i+2]){
+            flag=false;
+            break;
+        }
+    }
+
+
+    if(flag==false) cout<<-1<<"\n";
+    else cout<<a[0]<<" "<<a[1]<<"\n";
 
 }
 

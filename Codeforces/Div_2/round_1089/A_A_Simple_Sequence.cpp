@@ -34,7 +34,12 @@ typedef map<int,int> mii;
 
 
 void solve(){
-
+    ll n;cin>>n;
+    vector<ll>ans;
+    for(int i=n;i>0;i--){
+        cout<<i<<" ";
+    }
+    cout<<endl;
 }
 
 int32_t main()

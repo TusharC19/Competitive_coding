@@ -34,7 +34,26 @@ typedef map<int,int> mii;
 
 
 void solve(){
+    ll n;
+    cin>>n;
+    vector<ll>a(n);
+    rep(i,n) cin>>a[i];
 
+    // for(int i:a) cout<<i<<" ";cout<<endl;
+
+    // ll mini=a[0];
+    vector<ll>pf(n);
+    pf[0]=a[0];
+    for(ll i=1;i<n;i++){
+        pf[i]=min(a[i],pf[i-1]);
+    }
+
+    ll sum=0;
+    for(int i:pf) sum+=i;
+    cout<<sum<<endl;
+
+
+    // cout<<-1<<endl;
 }
 
 int32_t main()
